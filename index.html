@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ToDo</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- jsDelivr :: Sortable (http://www.jsdelivr.com/package/npm/sortablejs) -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+
+
+    <!-- jsDelivr :: Sortable :: Latest (http://www.jsdelivr.com/package/npm/sortablejs) -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script src="js/jquery.amaran.min.js"></script>
+    <link rel="stylesheet" href="css/materialize.css">
+    <link  href="css/datepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/amaran.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="container">
+    <div class="todoListMain" id="main">
+        <h1>TO-DO</h1>
+        <ul class="theList" id="list">
+        </ul>
+        <h6 id="loading">Loading...</h6>
+        <div class="textInput">
+            <input id='todo-input' class="text-input" placeholder="Enter task">
+            <input id='due-date-input' class="text-date" data-toggle="datepicker" placeholder="Due date" onchange="todoInputButton.focus();">
+            <button id="todo-input-btn" class="btn-input" onclick="addTask();">Add</button>
+        </div>
+    </div>
+</div>
+
+<div class="navbar-fixed" style="bottom: 0; position: fixed;">
+    <nav>
+        <div class="nav-wrapper grey lighten-1">
+            <ul class="right">
+                <li ><a class="grey-text text-darken-4" href="javascript:exportJson()">Export</a></li>
+            </ul>
+            <ul class="left">
+                <li ><a class="grey-text text-darken-4" href="javascript:$('#import').modal('open'); $('#json-import').focus()">Import</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Modal Structure -->
+<div id="import" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Import Tasks</h4>
+        <textarea title="text" class="textarea" cols="45" rows="15" id="json-import"></textarea>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:importJson($('#json-import').val());" class="modal-action waves-effect waves-green btn-flat ">Import</a>
+    </div>
+</div>
+<div id="todo-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4 id="todo-modal-title">Todo</h4>
+        <h6 id="todo-modal-date" style="color: #8c8c8c"></h6>
+        <br>
+        <p id="todo-modal-text" style="word-wrap: break-word"></p>
+    </div>
+</div>
+<script src="todo.js"></script>
+<script>
+    $('.modal').modal();
+    var list = document.getElementById("list")
+    Sortable.create(list, {
+        animation: 150, // ms, animation speed moving items when sorting, `0` — without animation
+        onUpdate: function (evt/**Event*/){
+            var item = evt.item; // the current dragged HTMLElement
+        }
+    });
+</script>
+</body>
+</html>
+

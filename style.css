@@ -1,0 +1,163 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+body {
+    background-color: #f4f4f7;
+    font-family: sans-serif;
+    text-align: center;
+    padding-bottom: 200px;
+    color: #36303f;
+}
+
+.text-input {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    width: 250px;
+}
+
+.textarea {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+}
+.text-date {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    width: 100px;
+}
+
+.btn-input {
+    text-align: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50px;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #6655ff;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 0px 30px rgba(10, 0, 20, 0.1);
+    z-index: 1;
+}
+
+.btn-input:hover {
+    background-color: white;
+    color: #6655ff;
+
+}
+
+.todoListMain {
+    margin-top: 50px;
+}
+
+.todoListMain h1 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.textInput {
+    margin-top: 22px;
+}
+
+.theList li {
+    border-radius: 5px;
+    position: relative;
+    text-align: left;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 4px;
+    background-color: white;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 45px;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 300px;
+    transition-duration: 0.2s;
+}
+
+.theList li:hover {
+    box-shadow: 0px 0px 30px rgba(10, 0, 20, 0.1);
+    z-index: 1;
+}
+.textInput :hover {
+    box-shadow: 0px 0px 30px rgba(10, 0, 20, 0.1);
+    z-index: 1;
+}
+
+.theList div {
+    float: right;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 42px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.theList div img {
+    transform: scale(2.4);
+}
+
+.theList div:hover {
+    background-color: #6655ff;
+}
+
+.theList div:hover img {
+    content: url(checkWhite.svg);
+}
+
+.theList li img {
+    display: block;
+    content: url(check.svg);
+    height: 12px;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+}
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #dedede;
+}
+
+li.nav {
+    float: right;
+}
+
+li.nav a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.nav a:hover:not(.active) {
+    background-color: #b5b5b5;
+}
+
