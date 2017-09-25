@@ -124,27 +124,60 @@ body {
     border-bottom-right-radius: 5px;
     transition-duration: 0.2s;
 }
-
-.theList div img {
-    transform: scale(2.4);
-}
-
-.theList div:hover {
+/*normal*/
+.check-normal div:hover {
     background-color: #6655ff;
 }
-
-.theList div:hover img {
-    content: url(checkWhite.svg);
+.check-normal div {
+    border: 1px solid #6655ff;
 }
+.check-normal img {
+    content: url(checkBlue.svg);
+}
+
+/*important*/
+
+.check-important div {
+    border: 1px solid #ffa902;
+}
+.check-important div:hover {
+    background-color: #ffa902;
+}
+.check-important img {
+    content: url(checkOrange.png);
+}
+
+/*super important*/
+
+.check-super-important div{
+    border: 1px solid #dd4f3f;
+}
+.check-super-important div:hover {
+    background-color: #dd4f3f;
+}
+.check-super-important img {
+    content: url(checkRed.png);
+}
+
+
 
 .theList li img {
     display: block;
-    content: url(check.svg);
     height: 12px;
     position: absolute;
     right: 15px;
     top: 12px;
 }
+
+.theList div img {
+    transform: scale(2.4);
+}
+
+
+.theList div:hover img {
+    content: url(checkWhite.svg);
+}
+
 ul.nav {
     list-style-type: none;
     margin: 0;
