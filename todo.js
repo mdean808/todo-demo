@@ -6,7 +6,7 @@ if (typeof(tasks) != 'undefined') {
     for(var i = 0; i < tasks.length; i++) {
         var todoNumber = todoEntries.length;
         var task = tasks[i];
-        todoEntries.push($('<li style="min-height: 12px" class="truncate" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + task.task + '<ul style="color: #8c8c8c">Due: ' + task.due + '</ul> <div style="border: 1px solid #6655ff; border-radius: 5px" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%;" src="check.svg"></div></li>').attr('task', task.task).attr('due', task.due).appendTo($('#list')));
+        todoEntries.push($('<li style="min-height: 12px" class="truncate" title="' + task.task + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + task.task + '<ul style="color: #8c8c8c">Due: ' + task.due + '</ul> <div style="border: 1px solid #6655ff; border-radius: 5px" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%;" src="check.svg"></div></li>').attr('task', task.task).attr('due', task.due).appendTo($('#list')));
     }
 } else {
     todoNumber = -1;
@@ -21,7 +21,7 @@ function addTask() {
     todoNumber += 1;
     //todoEntries[todoNumber] = todoInput.val();
     if (todoInput.val() && todoDate.val()) {
-        var theTask = $('<li style="min-height: 12px" class="truncate" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + todoInput.val() + '<ul style="color: #8c8c8c">Due: ' + todoDate.val() + '</ul> <div style="border: 1px solid #6655ff; border-radius: 5px" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%; " src="check.svg"></div></li>').attr('task', todoInput.val()).attr('due', todoDate.val());
+        var theTask = $('<li style="min-height: 12px" class="truncate" title="' + todoInput.val() + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + todoInput.val() + '<ul style="color: #8c8c8c">Due: ' + todoDate.val() + '</ul> <div style="border: 1px solid #6655ff; border-radius: 5px" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%; " src="check.svg"></div></li>').attr('task', todoInput.val()).attr('due', todoDate.val());
         todoEntries.push(theTask);
         $('#list').append(theTask);
         todoDate.val("");
@@ -85,7 +85,7 @@ function importJson(importText) {
             for (var i = 0; i < newTasks.length; i++) {
                 todoNumber += 1;
                 var newTask = newTasks[i];
-                todoEntries.push($('<li style="min-height: 12px" class="truncate" onclick="todoModal($(this).attr(\'id\'));" id="todo-' + todoNumber + '">' + newTask.task + '<ul style="color: #8c8c8c">Due: ' + newTask.due + '</ul> <div style="border: 1px solid #6655ff; border-radius: 5px;" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%; " src="check.svg"></div></li>').attr('task', newTask.task).attr('due', newTask.due).appendTo($('#list')));
+                todoEntries.push($('<li style="min-height: 12px" class="truncate" title="' + newTask.task + '" onclick="todoModal($(this).attr(\'id\'));" id="todo-' + todoNumber + '">' + newTask.task + '<ul style="color: #8c8c8c">Due: ' + newTask.due + '</ul> <div style="border: 1px solid #6655ff; border-radius: 5px;" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%; " src="check.svg"></div></li>').attr('task', newTask.task).attr('due', newTask.due).appendTo($('#list')));
             }
             updateLocal();
             $('#import').modal('close');
