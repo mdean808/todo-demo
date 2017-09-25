@@ -28,6 +28,8 @@ body {
     font-size: 14px;
     border: none;
     width: 150px;
+    background-color: white;
+    color: #757575;
 }
 
 .textarea {

@@ -7,7 +7,7 @@ if (typeof(tasks) != 'undefined') {
         var todoNumber = todoEntries.length;
         var task = tasks[i];
         //TODO: check value of priority-selector and append that to theTask LI class.
-        todoEntries.push($('<li style="min-height: 12px" class="truncate check-normal" title="' + task.task + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + task.task + '<ul style="color: #8c8c8c">Due: ' + task.due + '</ul> <div style=" border-radius: 5px" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%;" src="checkBlue.svg"></div></li>').attr('task', task.task).attr('due', task.due).appendTo($('#list')));
+        todoEntries.push($('<li style="min-height: 12px" class="truncate ' + task.priority +'" title="' + task.task + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + task.task + '<ul style="color: #8c8c8c">Due: ' + task.due + '</ul> <div style=" border-radius: 5px" onclick="removeTask(this.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%;" src="checkBlue.svg"></div></li>').attr('task', task.task).attr('due', task.due).appendTo($('#list')));
     }
 } else {
     todoNumber = -1;
@@ -16,15 +16,16 @@ $('#loading').remove();
 var todoInput = $("#todo-input");
 var todoDate = $("#due-date-input");
 var todoInputButton = $("#todo-input-btn");
+var prioritySelector = $('#priority-selector');
 todoInput.focus();
 
 function addTask() {
     todoNumber += 1;
     //TODO: check value of priority-selector and append that to theTask LI class.
-    if (todoInput.val() && todoDate.val()) {
-        var theTask = $('<li style="min-height: 12px" class="truncate check-normal" title="' + todoInput.val() + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + todoInput.val() + '<ul style="color: #8c8c8c">Due: ' + todoDate.val() + '</ul> <div style=" border-radius: 5px" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%; " src="checkBlue.svg"></div></li>').attr('task', todoInput.val()).attr('due', todoDate.val());
+    if (todoInput.val() && todoDate.val() && prioritySelector.val()) {
+        var theTask = $('<li style="min-height: 12px" class="truncate ' + prioritySelector.val() + '" title="' + todoInput.val() + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + todoInput.val() + '<ul style="color: #8c8c8c">Due: ' + todoDate.val() + '</ul> <div style=" border-radius: 5px" onclick="removeTask(this.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%; " src="checkBlue.svg"></div></li>').attr('task', todoInput.val()).attr('due', todoDate.val()).attr('priority', prioritySelector.val());
         todoEntries.push(theTask);
-        $('#list').append(theTask);
+        $('#list').append(theTask.hide().show(150));
         todoDate.val("");
         todoInput.val("")
         updateLocal();
@@ -55,7 +56,7 @@ function removeTask(todoElement) {
     $.amaran({
         'theme': 'colorful',
         'content': {
-            bgcolor: '#6655ff',
+            bgcolor: '#77f442',
             color: '#fff',
             message: 'Task succesfully completed.'
         },
@@ -66,17 +67,12 @@ function removeTask(todoElement) {
 
 function exportJson() {
     var i = 0;
-    $.map(todoEntries, function (n, i) {
-        console.log()
-    })
-    updateLocal();
     if ($("#json-export").length) {
         $("#json-export").val(JSON.stringify(json, null, 4));
     } else {
         $('#main').append('<div style="margin-top: 50px" class="textInput" id="json-export"><textarea class="textarea" cols="45" rows="15" id="json-export">' + JSON.stringify(json, null, 4) + '</textarea><br><button onclick="removeExport();" class="btn" style="background-color: #6655ff;" id="export-hide">Hide</button></div>')
     }
-    console.log(JSON.stringify(json, null, 4))
-    localStorage['json'] = JSON.stringify(json, null, 4);
+    updateLocal();
 }
 
 function importJson(importText) {
@@ -86,15 +82,16 @@ function importJson(importText) {
             for (var i = 0; i < newTasks.length; i++) {
                 todoNumber += 1;
                 var newTask = newTasks[i];
-                //TODO: check value of priority-selector and append that to theTask LI class.
-                todoEntries.push($('<li style="min-height: 12px" class="truncate check-normal" title="' + newTask.task + '" onclick="todoModal($(this).attr(\'id\'));" id="todo-' + todoNumber + '">' + newTask.task + '<ul style="color: #8c8c8c">Due: ' + newTask.due + '</ul> <div style="border-radius: 5px;" onclick="removeTask(this.parentElement)"><img style="display: block; margin: 30% 0 0 50%; " src="checkBlue.svg"></div></li>').attr('task', newTask.task).attr('due', newTask.due).appendTo($('#list')));
+                console.log(newTask)
+                //TODO: make sure priotiry is there.
+                todoEntries.push($('<li style="min-height: 12px" class="truncate ' + newTask.priority + '" title="' + newTask.task + '" onclick="todoModal($(this).attr(\'id\'));" id="todo-' + todoNumber + '">' + newTask.task + '<ul style="color: #8c8c8c">Due: ' + newTask.due + '</ul> <div style="border-radius: 5px;" onclick="removeTask(this.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%; " src="checkBlue.svg"></div></li>').attr('task', newTask.task).attr('due', newTask.due).appendTo($('#list')));
             }
             updateLocal();
             $('#import').modal('close');
             $.amaran({
                 'theme': 'colorful',
                 'content': {
-                    bgcolor: '#6655ff',
+                    bgcolor: '#77f442',
                     color: '#fff',
                     message: 'Tasks successfully imported!'
                 },
@@ -142,11 +139,11 @@ function importJson(importText) {
 
 function todoModal(elementNumber) {
     try {
-        var text = todoEntries[elementNumber].attr("task")
-        var date = todoEntries[elementNumber].attr("due");
-        $('#todo-modal').modal('open');
-        $('#todo-modal-text').text(text);
-        $('#todo-modal-date').text('Due: ' + date);
+            var text = todoEntries[elementNumber].attr("task")
+            var date = todoEntries[elementNumber].attr("due");
+            $('#todo-modal').modal('open');
+            $('#todo-modal-text').text(text);
+            $('#todo-modal-date').text('Due: ' + date);
     } catch(e) {
         console.log(e);
     }
@@ -159,7 +156,7 @@ function removeExport() {
 function updateLocal() {
     json = {
         tasks: $.map(todoEntries, function (n, i) {
-            return {task: n.attr('task'), due: n.attr('due')};
+            return {task: n.attr('task'), due: n.attr('due'), priority: n.attr('priority')};
         })
     };
     localStorage['json'] = JSON.stringify(json, null, 4);

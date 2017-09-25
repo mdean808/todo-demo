@@ -10,14 +10,12 @@
     <!-- Javascript -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.0.2/jquery.sumoselect.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/datepicker.min.js"></script>
     <script src="js/jquery.amaran.min.js"></script>
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.0.2/sumoselect.min.css">
     <link rel="stylesheet" href="css/materialize.css">
     <link href="css/datepicker.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/amaran.min.css">
@@ -37,9 +35,9 @@
                 <input id='todo-input' class="text-input" placeholder="Enter task">
                 <select title="select" id="priority-selector" class="text-dropdown">
                     <option value="" disabled selected>Select Priority</option>
-                    <option value="Normal">Normal</option>
-                    <option value="Important">Important</option>
-                    <option value="Super Important">Super Important</option>
+                    <option value="check-normal">Normal</option>
+                    <option value="check-important">Important</option>
+                    <option value="check-super-important">Super Important</option>
                 </select>
                 <input id='due-date-input' class="text-date" data-toggle="datepicker" placeholder="Due date"
                        onchange="todoInputButton.focus();">
