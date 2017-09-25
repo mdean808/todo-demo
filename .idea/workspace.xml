@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7344f0c8-8ee4-4b2b-a809-63cdbeb00b47" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ToDo b1.iml" afterPath="$PROJECT_DIR$/.idea/ToDo b1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/hocke.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/hocke.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace (unicorn-linux's conflicted copy 2017-09-20).xml" afterPath="$PROJECT_DIR$/.idea/workspace (unicorn-linux's conflicted copy 2017-09-20).xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check.svg" afterPath="$PROJECT_DIR$/check.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkWhite.svg" afterPath="$PROJECT_DIR$/checkWhite.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/amaran.min.css" afterPath="$PROJECT_DIR$/css/amaran.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/animate.min.css" afterPath="$PROJECT_DIR$/css/animate.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-datetimepicker.min.css" afterPath="$PROJECT_DIR$/css/bootstrap-datetimepicker.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/datepicker.min.css" afterPath="$PROJECT_DIR$/css/datepicker.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap-datetimepicker.min.js" afterPath="$PROJECT_DIR$/js/bootstrap-datetimepicker.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/datepicker.min.js" afterPath="$PROJECT_DIR$/js/datepicker.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.amaran.min.js" afterPath="$PROJECT_DIR$/js/jquery.amaran.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -161,7 +144,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="-1" />
     <option name="width" value="1920" />
     <option name="height" value="526" />
@@ -258,12 +241,12 @@
       <workItem from="1506064163799" duration="207000" />
       <workItem from="1506104877057" duration="7217000" />
       <workItem from="1506113520983" duration="2243000" />
-      <workItem from="1506304829910" duration="3099000" />
+      <workItem from="1506304829910" duration="3246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43106000" />
+    <option name="totallyTimeSpent" value="43253000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -275,7 +258,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15015806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
