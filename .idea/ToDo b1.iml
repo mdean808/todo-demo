@@ -15,5 +15,10 @@
     <orderEntry type="library" name="Sortable" level="application" />
     <orderEntry type="library" name="Sortable" level="application" />
     <orderEntry type="library" name="jquery.sumoselect" level="application" />
+    <orderEntry type="library" name="jquery-3.2.1" level="application" />
+    <orderEntry type="library" name="materialize" level="application" />
+    <orderEntry type="library" name="Sortable" level="application" />
+    <orderEntry type="library" name="jquery.ui.position" level="application" />
+    <orderEntry type="library" name="jquery.contextMenu" level="application" />
   </component>
 </module>

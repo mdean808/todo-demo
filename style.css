@@ -167,7 +167,9 @@ body {
     content: url(checkRed.png);
 }
 
-
+.complete {
+    opacity: 0.5;
+}
 
 .theList li img {
     display: block;
