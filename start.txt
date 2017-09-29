@@ -1,0 +1,1 @@
+Run node server.js to open a localhost server at http://localhost:8080

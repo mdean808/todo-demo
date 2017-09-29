@@ -6,7 +6,8 @@ if (typeof(tasks) != 'undefined') {
     for(var i = 0; i < tasks.length; i++) {
         var todoNumber = todoEntries.length;
         var task = tasks[i];
-        todoEntries.push($('<li style="min-height: 12px" class="truncate todo-menu ' + task.priority +' ' + task.completed + '" title="' + task.task + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + task.task + '<ul style="color: #8c8c8c">Due: ' + task.due + '</ul> <div style=" border-radius: 5px" onclick="editTask(this.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%;" src="checkBlue.svg"></div></li>').attr('task', task.task).attr('due', task.due).attr('priority', task.priority).attr('completed', task.completed).appendTo($('#list')));
+        //TODO: check value of priority-selector and append that to theTask LI class.
+        todoEntries.push($('<li style="min-height: 12px" class="truncate todo-menu ' + task.priority +' ' + task.completed + '" title="' + task.task + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + task.task + '<ul style="color: #8c8c8c">Due: ' + task.due + '</ul> <div style=" border-radius: 5px" onclick="completeTask(this.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%;" src="checkBlue.svg"></div></li>').attr('task', task.task).attr('due', task.due).attr('priority', task.priority).attr('completed', task.completed).appendTo($('#list')));
     }
 } else {
     todoNumber = -1;
@@ -20,8 +21,9 @@ todoInput.focus();
 
 function addTask() {
     todoNumber += 1;
+    //TODO: check value of priority-selector and append that to theTask LI class.
     if (todoInput.val() && todoDate.val() && prioritySelector.val()) {
-        var theTask = $('<li style="min-height: 12px" class="truncate todo-menu ' + prioritySelector.val() + '" title="' + todoInput.val() + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + todoInput.val() + '<ul style="color: #8c8c8c">Due: ' + todoDate.val() + '</ul> <div style=" border-radius: 5px" onclick="editTask(this.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%; " src="checkBlue.svg"></div></li>').attr('task', todoInput.val()).attr('due', todoDate.val()).attr('priority', prioritySelector.val()).attr('completed', 'uncomplete');
+        var theTask = $('<li style="min-height: 12px" class="truncate todo-menu ' + prioritySelector.val() + '" title="' + todoInput.val() + '" onclick="todoModal($(this).attr(\'id\'));" id="' + todoNumber + '">' + todoInput.val() + '<ul style="color: #8c8c8c">Due: ' + todoDate.val() + '</ul> <div style=" border-radius: 5px" onclick="completeTask(this.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%; " src="checkBlue.svg"></div></li>').attr('task', todoInput.val()).attr('due', todoDate.val()).attr('priority', prioritySelector.val()).attr('completed', 'uncomplete');
         todoEntries.push(theTask);
         $('#list').append(theTask.hide().show(150));
         todoDate.val("");
@@ -49,7 +51,7 @@ function removeTask(todoElement) {
     updateLocal();
 }
 
-function editTask(todoElement) {
+function completeTask(todoElement) {
     if (!$(todoElement).hasClass('complete')) {
         $(todoElement).attr('completed', 'complete');
         $(todoElement).addClass($(todoElement).attr('completed'));
@@ -90,7 +92,8 @@ function importJson(importText) {
                 todoNumber += 1;
                 var newTask = newTasks[i];
                 console.log(newTask)
-                todoEntries.push($('<li style="min-height: 12px" class="truncate todo-menu ' + newTask.priority + '" title="' + newTask.task + '" onclick="todoModal($(this).attr(\'id\'));" id="todo-' + todoNumber + '">' + newTask.task + '<ul style="color: #8c8c8c">Due: ' + newTask.due + '</ul> <div style="border-radius: 5px;" onclick="editTask(this.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%; " src="checkBlue.svg"></div></li>').attr('task', newTask.task).attr('due', newTask.due).attr('priority', newTask.priority).attr('completed', newTask.completed).appendTo($('#list')));
+                //TODO: make sure priotiry is there.
+                todoEntries.push($('<li style="min-height: 12px" class="truncate todo-menu ' + newTask.priority + '" title="' + newTask.task + '" onclick="todoModal($(this).attr(\'id\'));" id="todo-' + todoNumber + '">' + newTask.task + '<ul style="color: #8c8c8c">Due: ' + newTask.due + '</ul> <div style="border-radius: 5px;" onclick="completeTask(t`his.parentElement); event.stopPropagation()"><img style="display: block; margin: 30% 0 0 50%; " src="checkBlue.svg"></div></li>').attr('task', newTask.task).attr('due', newTask.due).attr('priority', newTask.priority).attr('completed', newTask.completed).appendTo($('#list')));
             }
             updateLocal();
             $('#import').modal('close');
@@ -177,11 +180,20 @@ function isJson(str) {
     return true;
 }
 
+function openEditModal(todoToEdit) {
+    $('#edit-input').val($(todoToEdit).attr('task'))
+    $('#edit-due-date').val($(todoToEdit).attr('due'))
+    $('#edit-priority').val($(todoToEdit).attr('priority'))
+    $('#edit').modal('open');
+}
+
 $(document).ready(function () {
-    $('[data-toggle="datepicker"]').datepicker({
+    $('.datepicker').datepicker({
         autoHide: true
     });
-    $('.modal').modal();
+    $('.datepicker1').datepicker({
+        autoHide: true
+    });
 });
 
 $(function() {
@@ -190,6 +202,8 @@ $(function() {
         callback: function(key, options) {
             if (key == 'delete') {
                 removeTask(this);
+            } else if(key == 'edit') {
+                openEditModal(this)
             }
             //console.log(key, this)
         },
