@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7344f0c8-8ee4-4b2b-a809-63cdbeb00b47" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ToDo b1.iml" afterPath="$PROJECT_DIR$/.idea/ToDo b1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace (unicorn-linux's conflicted copy 2017-09-20).xml" afterPath="$PROJECT_DIR$/.idea/workspace (unicorn-linux's conflicted copy 2017-09-20).xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkBlue.svg" afterPath="$PROJECT_DIR$/checkBlue.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkWhite.svg" afterPath="$PROJECT_DIR$/checkWhite.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/amaran.min.css" afterPath="$PROJECT_DIR$/css/amaran.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/animate.min.css" afterPath="$PROJECT_DIR$/css/animate.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-datetimepicker.min.css" afterPath="$PROJECT_DIR$/css/bootstrap-datetimepicker.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/datepicker.min.css" afterPath="$PROJECT_DIR$/css/datepicker.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap-datetimepicker.min.js" afterPath="$PROJECT_DIR$/js/bootstrap-datetimepicker.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/datepicker.min.js" afterPath="$PROJECT_DIR$/js/datepicker.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.amaran.min.js" afterPath="$PROJECT_DIR$/js/jquery.amaran.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.js" afterPath="$PROJECT_DIR$/todo.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -264,12 +248,12 @@
       <workItem from="1506665589787" duration="42000" />
       <workItem from="1506665762140" duration="2038000" />
       <workItem from="1506891595618" duration="1819000" />
-      <workItem from="1506902705242" duration="3649000" />
+      <workItem from="1506902705242" duration="4308000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71218000" />
+    <option name="totallyTimeSpent" value="71877000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
