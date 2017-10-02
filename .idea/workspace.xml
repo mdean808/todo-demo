@@ -29,8 +29,8 @@
       <file leaf-file-name="todo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+            <state relative-caret-position="406">
+              <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
               <folding>
                 <marker date="1506905700361" expanded="true" signature="346:362" ph="..." />
                 <marker date="1506905700361" expanded="true" signature="543:557" ph="..." />
@@ -248,12 +248,12 @@
       <workItem from="1506665589787" duration="42000" />
       <workItem from="1506665762140" duration="2038000" />
       <workItem from="1506891595618" duration="1819000" />
-      <workItem from="1506902705242" duration="4308000" />
+      <workItem from="1506902705242" duration="5004000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71877000" />
+    <option name="totallyTimeSpent" value="72573000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -888,8 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        <state relative-caret-position="406">
+          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
           <folding>
             <marker date="1506905700361" expanded="true" signature="346:362" ph="..." />
             <marker date="1506905700361" expanded="true" signature="543:557" ph="..." />
