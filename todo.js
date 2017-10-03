@@ -44,7 +44,7 @@ function addTask() {
 }
 
 function removeTask(todoElement) {
-    if (confirm('Are you sure you want to delete this taksk?')) {
+    if (confirm('Are you sure you want to delete this task?')) {
         todoEntries.splice(todoEntries.indexOf(todoElement), 1); //this just removes the elemnt from da array, theres prob a better way like todoEntries.remove
         $(todoElement).remove();
         updateLocal();
