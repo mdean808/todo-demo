@@ -1,5 +1,4 @@
 const http = require('http');
-const express = require('express');
 const ical = require('node-ical');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const accountSid = 'AC43cb6273bc0586976a4e712af6036621';
