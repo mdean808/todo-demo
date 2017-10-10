@@ -6,6 +6,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "node-ical": "^0.5.4",
+    "twilio": "^3.8.0"
   }
 }
