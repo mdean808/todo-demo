@@ -17,7 +17,24 @@ app.post('/sms', (req, res) => {
     ical.fromURL('http://www.hpa.edu/calendar/calendar_744_gmt.ics', {}, function(err, data) {
         for (var k in data) {
             if (data[k].summary == 'Lunch') {
-                data[k].description.replace(/\\n/g, "");
+                data[k].description.replace(/\r?\n|\r/g, "");
+                lunchDesc = data[k].description;
+                twiml.message('Lunch is: \n\n' + lunchDesc);
+                res.writeHead(200, { 'Content-Type': 'text/xml' });
+                res.end(twiml.toString());
+                console.log('successfully sent');
+                break;
+            }
+        }
+    });
+});
+
+app.get('/sms', (req, res) => {
+    const twiml = new MessagingResponse();
+    ical.fromURL('http://www.hpa.edu/calendar/calendar_744_gmt.ics', {}, function(err, data) {
+        for (var k in data) {
+            if (data[k].summary == 'Lunch') {
+                data[k].description.replace(/\r?\n|\r/g, "");
                 lunchDesc = data[k].description;
                 twiml.message('Lunch is: \n\n' + lunchDesc);
                 res.writeHead(200, { 'Content-Type': 'text/xml' });
